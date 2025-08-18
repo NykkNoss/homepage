@@ -33,7 +33,7 @@ export default function Home() {
           >
             <div style={styles.card}>
               <Image
-                src="/va.png"
+                src="/volpe.png"
                 alt="Logo La Volpe Argentata"
                 width={400}
                 height={400}
