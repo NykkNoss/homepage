@@ -9,20 +9,6 @@ export default function Home() {
         <h1 style={styles.title}>QUESTO SITO È SPONSORIZZATO DA</h1>
 
         <div className="row">
-          {/* --- CARD TRUFFALDINI --- */}
-          <div style={styles.card}>
-            <Image
-              src="/truffaldini.png"
-              alt="Logo Truffaldini"
-              width={400}
-              height={400}
-              style={styles.img}
-              priority
-            />
-            <p style={{ ...styles.caption, fontFamily: "Impact, Charcoal, sans-serif" }}>
-              Truffiamo dal 2000
-            </p>
-          </div>
 
           {/* --- CARD VOLPE ARGENTATA (con link a Instagram) --- */}
           <a
@@ -48,6 +34,20 @@ clicca per scoprire di più
               </p>
             </div>
           </a>
+          {/* --- CARD TRUFFALDINI --- */}
+          <div style={styles.card}>
+            <Image
+              src="/truffaldini.png"
+              alt="Logo Truffaldini"
+              width={400}
+              height={400}
+              style={styles.img}
+              priority
+            />
+            <p style={{ ...styles.caption, fontFamily: "Impact, Charcoal, sans-serif" }}>
+              Truffiamo dal 2000
+            </p>
+          </div>
         </div>
       </div>
     </main>
