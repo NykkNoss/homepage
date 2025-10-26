@@ -95,7 +95,6 @@ const styles: { [k: string]: React.CSSProperties } = {
     padding: 20,
     boxShadow: "0 10px 30px rgba(0,0,0,.45)",
     width: "min(420px, 92vw)",
-    justifySelf: "center",
     textAlign: "center",
     transition: "transform 0.2s ease",
   },
