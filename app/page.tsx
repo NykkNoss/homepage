@@ -1,115 +1,108 @@
 import Image from "next/image";
 
+const appLinks = [
+  {
+    title: "Dispensa",
+    image: "/dipensa.png",
+    alt: "Icona Dispensa",
+    href: "https://dispensa.nicoberghi.net/"
+  },
+  {
+    title: "Dashboard Ore",
+    image: "/dashboard.png",
+    alt: "Icona Dashboard Ore",
+    href: "https://dashboard.nicoberghi.net/"
+  }
+];
+
+const sponsor = {
+  title: "La Volpe Argentata",
+  image: "/volpe.png",
+  alt: "Logo La Volpe Argentata",
+  href: "https://www.instagram.com/la.volpeargentata/?hl=it",
+  description: (
+    <>
+      🍸 Liquori e fermentati fatti in casa
+      <br />
+      📖 Tra il fantasy e il reale.
+      <br />
+      🔍 L&apos;unica cosa autentica? Il sapore.
+      <br />
+      clicca per scoprire di più
+    </>
+  )
+};
+
 export default function Home() {
   return (
-    <main style={styles.main}>
-      <div style={styles.bgOverlay} />
+    <main className="home">
+      <div className="bg-overlay" />
 
-      <div style={styles.content}>
-        <h1 style={styles.title}>QUESTO SITO È SPONSORIZZATO DA</h1>
-
-        <div className="row">
-
-          {/* --- CARD VOLPE ARGENTATA (con link a Instagram) --- */}
-          <a
-            href="https://www.instagram.com/la.volpeargentata/?hl=it"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <div style={styles.card}>
-              <Image
-                src="/volpe.png"
-                alt="Logo La Volpe Argentata"
-                width={400}
-                height={400}
-                style={styles.img}
-                priority
-              />
-              <p style={{ ...styles.caption, fontFamily: "Georgia, serif" }}>
-                🍸 Liquori e fermentati fatti in casa <br />
-📖 Tra il fantasy e il reale.<br />
-🔍 L’unica cosa autentica? Il sapore.<br />
-clicca per scoprire di più
-              </p>
-            </div>
-          </a>
-          {/* --- CARD TRUFFALDINI --- */}
-          <div style={styles.card}>
+      <section className="content" aria-label="Link principali">
+        <header className="site-header">
+          <div className="brand-plate">
             <Image
-              src="/truffaldini.png"
-              alt="Logo Truffaldini"
-              width={400}
-              height={400}
-              style={styles.img}
+              className="brand-logo"
+              src="/logo.png"
+              alt="Noss Production"
+              width={260}
+              height={120}
               priority
             />
-            <p style={{ ...styles.caption, fontFamily: "Impact, Charcoal, sans-serif" }}>
-              Truffiamo dal 2000
-            </p>
           </div>
-        </div>
-      </div>
+        </header>
+
+        <section className="link-section" aria-labelledby="apps-title">
+          <h1 id="apps-title">Applicazioni</h1>
+          <div className="app-grid">
+            {appLinks.map((link) => (
+              <a
+                className="link-card compact-card"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={link.href}
+              >
+                <Image
+                  className="link-image"
+                  src={link.image}
+                  alt={link.alt}
+                  width={132}
+                  height={132}
+                />
+                <div className="link-copy">
+                  <h2>{link.title}</h2>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="link-section sponsor-section" aria-labelledby="sponsor-title">
+          <h1 id="sponsor-title">QUESTO SITO È SPONSORIZZATO DA</h1>
+          <div className="sponsor-grid">
+            <a
+              className="link-card featured-card"
+              href={sponsor.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className="link-image"
+                src={sponsor.image}
+                alt={sponsor.alt}
+                width={260}
+                height={260}
+                priority
+              />
+              <div className="link-copy">
+                <h2>{sponsor.title}</h2>
+                <p>{sponsor.description}</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </section>
     </main>
   );
 }
-
-const styles: { [k: string]: React.CSSProperties } = {
-  main: {
-    position: "relative",
-    minHeight: "100svh",
-    width: "100%",
-    overflow: "hidden",
-    color: "#fff",
-    display: "grid",
-    placeItems: "center",
-    background: "radial-gradient(1200px 600px at 20% 10%, #1a1a1a, #000)",
-  },
-  bgOverlay: {
-    position: "absolute",
-    inset: 0,
-    background:
-      "linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.65) 40%, rgba(0,0,0,.85))",
-    pointerEvents: "none",
-  },
-  content: {
-    position: "relative",
-    zIndex: 1,
-    maxWidth: 1200,
-    width: "100%",
-    padding: "32px 20px",
-    textAlign: "center",
-  },
-  title: {
-    fontSize: "clamp(24px, 3vw, 40px)",
-    fontWeight: 800,
-    letterSpacing: ".04em",
-    margin: "0 0 28px",
-    fontFamily: "Arial Black, sans-serif",
-  },
-  card: {
-    backdropFilter: "blur(6px)",
-    background: "rgba(255,255,255,0.04)",
-    border: "1px solid rgba(255,255,255,0.08)",
-    borderRadius: 20,
-    padding: 20,
-    boxShadow: "0 10px 30px rgba(0,0,0,.45)",
-    width: "min(420px, 92vw)",
-    justifySelf: "center",
-    textAlign: "center",
-    transition: "transform 0.2s ease",
-  },
-  img: {
-    width: "100%",
-    height: "auto",
-    borderRadius: 14,
-    display: "block",
-    marginBottom: 12,
-  },
-  caption: {
-    margin: 0,
-    fontSize: "clamp(14px, 1.5vw, 18px)",
-    fontWeight: 500,
-    opacity: 0.9,
-  },
-};
