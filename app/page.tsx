@@ -12,6 +12,12 @@ const appLinks = [
     image: "/dashboard.png",
     alt: "Icona Dashboard Ore",
     href: "https://dashboard.nicoberghi.net/"
+  },
+  {
+    title: "Spese Casa",
+    image: "/spese.png",
+    alt: "Icona Spese Casa",
+    href: "https://spese.nicoberghi.net/"
   }
 ];
 
@@ -22,13 +28,13 @@ const sponsor = {
   href: "https://www.instagram.com/la.volpeargentata/?hl=it",
   description: (
     <>
-      🍸 Liquori e fermentati fatti in casa
+      {"\u{1F378}"} Liquori e fermentati fatti in casa
       <br />
-      📖 Tra il fantasy e il reale.
+      {"\u{1F4D6}"} Tra il fantasy e il reale.
       <br />
-      🔍 L&apos;unica cosa autentica? Il sapore.
+      {"\u{1F50D}"} L&apos;unica cosa autentica? Il sapore.
       <br />
-      clicca per scoprire di più
+      clicca per scoprire di pi{"\u00f9"}
     </>
   )
 };
