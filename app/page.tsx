@@ -18,6 +18,12 @@ const appLinks = [
     image: "/spese.png",
     alt: "Icona Spese Casa",
     href: "https://spese.nicoberghi.net/"
+  },
+  {
+    title: "Scadenze",
+    image: "/scadenze.png",
+    alt: "Icona Scadenze",
+    href: "https://scadenze.nicoberghi.net/"
   }
 ];
 

@@ -56,7 +56,7 @@ a {
 .content {
   position: relative;
   z-index: 1;
-  width: min(100%, 880px);
+  width: min(100%, 1040px);
   text-align: center;
 }
 
@@ -98,10 +98,10 @@ a {
 
 .app-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   align-items: stretch;
-  width: min(100%, 880px);
+  width: min(100%, 1040px);
   margin: 0 auto;
 }
 
@@ -110,6 +110,8 @@ a {
   grid-template-columns: 1fr;
   gap: 14px;
   align-items: stretch;
+  width: min(100%, 880px);
+  margin: 0 auto;
 }
 
 .link-card {
@@ -137,15 +139,15 @@ a {
 }
 
 .compact-card {
-  min-height: 132px;
+  min-height: 118px;
   padding: 14px;
 }
 
 .link-image {
   display: block;
   flex: 0 0 auto;
-  width: 96px;
-  height: 96px;
+  width: 84px;
+  height: 84px;
   border-radius: 16px;
   object-fit: contain;
 }
@@ -179,6 +181,12 @@ a {
   line-height: 1.45;
 }
 
+@media (max-width: 980px) {
+  .app-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 620px);
+  }
+}
 @media (max-width: 760px) {
   .home {
     align-items: start;
